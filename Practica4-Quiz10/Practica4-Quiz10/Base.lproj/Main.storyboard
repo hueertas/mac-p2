@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--P4-QUIZ-->
+        <!--Title-->
         <scene sceneID="wJY-Go-Xdb">
             <objects>
                 <tableViewController id="2SO-K1-2mw" customClass="QuizzesTableViewController" customModule="Practica4_Quiz10" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,30 +16,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Quiz Cell" textLabel="4vC-fr-Km5" detailTextLabel="13D-c2-xmZ" style="IBUITableViewCellStyleSubtitle" id="UTz-19-bvE">
-                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Quiz Cell" rowHeight="132" id="UTz-19-bvE" customClass="QuizCell" customModule="Practica4_Quiz10" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="132"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UTz-19-bvE" id="acW-aW-HKj">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="55.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="132"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4vC-fr-Km5">
-                                            <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EJi-Ni-Zgo">
+                                            <rect key="frame" x="30" y="21" width="154" height="93"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="7mB-MJ-7f0"/>
+                                                <constraint firstAttribute="height" constant="100" id="8hT-Ns-aze"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZl-8M-Gdq">
+                                            <rect key="frame" x="232" y="56" width="69" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13D-c2-xmZ">
-                                            <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="EJi-Ni-Zgo" firstAttribute="top" secondItem="acW-aW-HKj" secondAttribute="topMargin" constant="10" id="6vb-fg-nt5"/>
+                                        <constraint firstItem="fZl-8M-Gdq" firstAttribute="leading" secondItem="EJi-Ni-Zgo" secondAttribute="trailing" constant="10" id="Q0E-mQ-eFs"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="EJi-Ni-Zgo" secondAttribute="bottom" constant="10" id="cIX-pd-SH4"/>
+                                        <constraint firstItem="EJi-Ni-Zgo" firstAttribute="centerY" secondItem="acW-aW-HKj" secondAttribute="centerY" id="mQX-B8-6PC"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="EJi-Ni-Zgo" secondAttribute="bottom" constant="64" id="rVj-49-NxQ"/>
+                                        <constraint firstItem="fZl-8M-Gdq" firstAttribute="leading" secondItem="EJi-Ni-Zgo" secondAttribute="trailing" constant="10" id="rkB-Ol-og5"/>
+                                        <constraint firstItem="EJi-Ni-Zgo" firstAttribute="leading" secondItem="acW-aW-HKj" secondAttribute="leadingMargin" constant="10" id="sbn-zf-Q8D"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="imgView" destination="EJi-Ni-Zgo" id="sR8-Ud-M7U"/>
+                                    <outlet property="qLabel" destination="fZl-8M-Gdq" id="UdR-O4-Fey"/>
                                     <segue destination="L3g-ac-1QF" kind="show" destinationCreationSelector="showQuizDetails:" id="2ff-lV-tBn"/>
                                 </connections>
                             </tableViewCell>
@@ -49,11 +59,18 @@
                             <outlet property="delegate" destination="2SO-K1-2mw" id="9JR-UQ-dX4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="P4-QUIZ" id="aNr-kU-l61"/>
+                    <navigationItem key="navigationItem" title="Title" id="bym-2o-Fqy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="GsV-1k-eF8">
+                            <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="recargar:" destination="2SO-K1-2mw" id="ujR-jM-tra"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQj-mG-LY4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="986.95652173913049" y="-75"/>
+            <point key="canvasLocation" x="905.79710144927549" y="-75"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="rXK-FS-Sqm">
@@ -64,7 +81,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ANSWER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lP-lK-ymH">
-                                <rect key="frame" x="172" y="259" width="71" height="21"/>
+                                <rect key="frame" x="172" y="204" width="71" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -78,15 +95,37 @@
                                 <rect key="frame" x="87" y="495" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QUESTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFt-EY-b4F">
-                                <rect key="frame" x="165" y="160" width="85" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="                  QUESTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFt-EY-b4F">
+                                <rect key="frame" x="87" y="142" width="240" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTU-Vw-9Pd">
+                                <rect key="frame" x="130" y="733" width="155" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Check your answer">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="CheckYourAnswer" destination="L3g-ac-1QF" eventType="touchUpInside" id="vIS-c2-rf7"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type your answer" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N7Y-aQ-Dgx">
+                                <rect key="frame" x="87" y="258" width="240" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="Finish:" destination="L3g-ac-1QF" eventType="editingDidEndOnExit" id="unc-64-Dd2"/>
+                                    <outlet property="delegate" destination="L3g-ac-1QF" id="TDd-IH-iOK"/>
+                                </connections>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="1" green="0.7676788183019887" blue="0.78384154710632781" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="1" green="0.76767881829999995" blue="0.78384154709999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="nLF-sX-kB7"/>
                     </view>
                     <navigationItem key="navigationItem" id="CzG-WG-MQ1"/>
@@ -95,11 +134,12 @@
                         <outlet property="attachmentImageView" destination="wt5-2q-BD0" id="7LK-S2-g2O"/>
                         <outlet property="photoImageView" destination="5vd-Nb-xFU" id="qKn-OD-sVr"/>
                         <outlet property="questionLabel" destination="uFt-EY-b4F" id="Vj2-0H-dra"/>
+                        <outlet property="responseTextField" destination="N7Y-aQ-Dgx" id="pnJ-hI-3eN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xd-4M-Fvq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868" y="-75"/>
+            <point key="canvasLocation" x="1866.6666666666667" y="-75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LKJ-Ab-RIz">

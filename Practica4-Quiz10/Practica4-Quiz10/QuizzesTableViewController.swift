@@ -34,7 +34,13 @@ class QuizzesTableViewController: UITableViewController {
         return qvc
     }
     
-
+    
+    @IBAction func recargar(_ sender: UIBarButtonItem) {
+        
+        quiz10Model.download()
+        tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,19 +55,18 @@ class QuizzesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Quiz Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Quiz Cell", for: indexPath) as! QuizCell
 
         // Configure the cell...
         
         let row = indexPath.row
         let quiz = quiz10Model.quizzes[row]
         
-        cell.textLabel?.text = quiz.question
-        cell.detailTextLabel?.text = quiz.author?.username ?? "anonimo"
-        cell.imageView?.image = UIImage(named: "none")
+        cell.qLabel.text = quiz.question
+        cell.imgView.image = UIImage(named: "none")
         if let url = quiz.attachment?.url {
          let img = image(url: url) 
-            cell.imageView?.image = img
+            cell.imgView?.image = img
         }
         return cell
     }

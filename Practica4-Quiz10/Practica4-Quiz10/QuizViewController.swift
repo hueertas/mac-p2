@@ -8,19 +8,18 @@
 
 import UIKit
 
-class QuizViewController: UIViewController {
+class QuizViewController: UIViewController, UITextFieldDelegate {
     
     
     var quiz: QuizItem!
     
     @IBOutlet weak var questionLabel: UILabel!
-    
     @IBOutlet weak var answerLabel: UILabel!
-    
-    
     @IBOutlet weak var attachmentImageView: UIImageView!
-    
     @IBOutlet weak var photoImageView: UIImageView!
+    
+    @IBOutlet weak var responseTextField: UITextField!
+    
     
     
     override func viewDidLoad() {
@@ -37,7 +36,37 @@ class QuizViewController: UIViewController {
         if let url = quiz.author?.photo?.url {
             photoImageView.image = image(url: url)
         }
+        
     }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        CheckYourAnswer()
+        
+    }
+  
+    
+    @IBAction func Finish(_ sender: UITextField) {
+        
+        let resp = sender.text
+         if resp == quiz.answer{
+            alert(msg: "It's correct!!!!")
+         }else{
+             
+             alert(msg:"Answer incorrect")
+         }    }
+    
+    
+    @IBAction func CheckYourAnswer() {
+        
+        let resp = responseTextField.text
+        if resp == quiz.answer{
+            
+            print("It's correct!!!!")
+        }else{
+            
+            print("Answer incorrect")
+        }
+    }
+    
     
 
     /*

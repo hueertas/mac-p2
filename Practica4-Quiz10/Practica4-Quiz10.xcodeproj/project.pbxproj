@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE5EE21F2386F09300C26C91 /* QuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EE21E2386F09300C26C91 /* QuizCell.swift */; };
 		BECEE17B2382EEAA00A965E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECEE17A2382EEAA00A965E8 /* AppDelegate.swift */; };
 		BECEE17D2382EEAA00A965E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECEE17C2382EEAA00A965E8 /* SceneDelegate.swift */; };
 		BECEE1822382EEAA00A965E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BECEE1802382EEAA00A965E8 /* Main.storyboard */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE5EE21A2386F04C00C26C91 /* Practica4-Quiz10-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Practica4-Quiz10-Bridging-Header.h"; sourceTree = "<group>"; };
+		BE5EE21E2386F09300C26C91 /* QuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCell.swift; sourceTree = "<group>"; };
 		BECEE1772382EEAA00A965E8 /* Practica4-Quiz10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Practica4-Quiz10.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECEE17A2382EEAA00A965E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BECEE17C2382EEAA00A965E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 				BECEE1AA2382EFC200A965E8 /* QuizzesTableViewController.swift */,
 				BECEE1AF2383000600A965E8 /* Alert.swift */,
 				BECEE1B32383148100A965E8 /* QuizViewController.swift */,
+				BE5EE21A2386F04C00C26C91 /* Practica4-Quiz10-Bridging-Header.h */,
+				BE5EE21E2386F09300C26C91 /* QuizCell.swift */,
 			);
 			path = "Practica4-Quiz10";
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				TargetAttributes = {
 					BECEE1762382EEAA00A965E8 = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 					BECEE18C2382EEAD00A965E8 = {
 						CreatedOnToolsVersion = 11.2.1;
@@ -281,6 +287,7 @@
 			files = (
 				BECEE17B2382EEAA00A965E8 /* AppDelegate.swift in Sources */,
 				BECEE1B42383148100A965E8 /* QuizViewController.swift in Sources */,
+				BE5EE21F2386F09300C26C91 /* QuizCell.swift in Sources */,
 				BECEE1AB2382EFC200A965E8 /* QuizzesTableViewController.swift in Sources */,
 				BECEE17D2382EEAA00A965E8 /* SceneDelegate.swift in Sources */,
 				BECEE1B02383000600A965E8 /* Alert.swift in Sources */,
@@ -458,6 +465,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Practica4-Quiz10/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -466,6 +474,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "es.upm.Practica4-Quiz10";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Practica4-Quiz10/Practica4-Quiz10-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -475,6 +485,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Practica4-Quiz10/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -483,6 +494,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "es.upm.Practica4-Quiz10";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Practica4-Quiz10/Practica4-Quiz10-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
